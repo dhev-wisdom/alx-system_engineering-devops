@@ -1,2 +1,2 @@
 #!/bin/bash
-for w in {a..z}{a..z};do echo $w;done | grep -v "oo"
+bash -c 'printf "%s\n" {a..z}{a..z}' | grep -v "oo"
