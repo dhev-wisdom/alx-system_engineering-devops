@@ -1,0 +1,2 @@
+#!/bin/bash
+for w in {a..z}{a..z};do echo $w;done | grep -v "oo"
