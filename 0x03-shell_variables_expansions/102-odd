@@ -1,2 +1,2 @@
 #!/bin/bash
-sed n\;g
+awk 'NR % 2 == 1'
