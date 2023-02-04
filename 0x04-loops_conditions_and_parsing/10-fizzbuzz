@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# FizzBuzz
+# Bash SCript that displays numbers 1 - 100
+for i in {1..100}
+do
+first=$((i%3))
+second=$((i%5))
+if [ "$first" -eq 0 ] && [ "$second" -eq 0 ]
+then
+	echo "FizzBuzz"
+elif [ "$first" -eq 0 ]
+then
+	echo "Fizz"
+elif [ "$second" -eq 0 ]
+then
+	echo "Buzz"
+else
+	echo "$i"
+fi
+done
