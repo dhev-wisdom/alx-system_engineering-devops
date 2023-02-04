@@ -15,5 +15,5 @@ then
 		echo "$fil is a regular file"
 	fi
 else
-	echo "$fil file does not exixt"
+	echo "$fil file does not exist"
 fi
