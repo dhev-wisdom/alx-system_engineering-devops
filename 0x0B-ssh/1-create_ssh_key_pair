@@ -5,4 +5,4 @@
 # private key, "school"
 
 KEY_NAME="school"
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/$KEY_NAME -N "betty"
+ssh-keygen -t rsa -b 4096 -f $KEY_NAME -P betty
