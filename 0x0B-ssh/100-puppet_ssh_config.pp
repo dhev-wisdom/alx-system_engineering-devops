@@ -1,11 +1,14 @@
-sshkey { 98.98.98.98:
-  ensure => present,
-  type   => 'ssh-rsa',
-  key    => '~/.ssh/school'
+# Setting ssh configuration with Puppet
+
+file { '/etc/ssh/ssh_config':
+    ensure => 'file',
+    owner  => '98.98.98.98',
+    group  => '98.98.98.98',
+    mode   => '0600'
 }
 
-sshd_config { 'PasswordAuthentication':
-  ensure => present,
-  value  => 'no',
+file_line { 'set-ssh-config':
+    path => '/etc/ssh/ssh_config',
+    line => "PasswordAuthentication no\n"
 }
 
