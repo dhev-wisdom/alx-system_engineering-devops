@@ -1,14 +1,13 @@
-# Setting ssh configuration with Puppet
+# Puppet script to create ssh config file
 
-file { '/etc/ssh/ssh_config':
-    ensure => 'file',
-    owner  => 'ubuntu',
-    group  => 'ubuntu',
-    mode => '0600',
+file_line { 'Turn off passwd auth':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    PasswordAuthentication no',
 }
 
-file_line { 'set-ssh-config':
-    path => '/etc/ssh/ssh_config',
-    line => "PasswordAuthentication no\n"
+file_line { 'Declare identity file':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    IdentityFile ~/.ssh/school',
 }
-
