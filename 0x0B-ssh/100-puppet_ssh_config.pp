@@ -2,8 +2,8 @@
 
 file { '/etc/ssh/ssh_config':
     ensure => 'file',
-    owner  => '98.98.98.98',
-    group  => '98.98.98.98',
+    owner  => '10.251.0.2',
+    group  => '10.251.0.2',
     mode   => '0600'
 }
 
