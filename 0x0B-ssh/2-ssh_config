@@ -1,0 +1,8 @@
+# Configure server to permit you
+# with private key ~/.ssh/school login without paasword
+
+Host *
+	Hostname ubuntu
+	User 98.98.98.98
+	IdentityFile ~/.ssh/school
+	PasswordAuthentification no
