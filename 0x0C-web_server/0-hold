@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Script transfers file from client to server
 
 if [ $# -lt 3 ]; then
@@ -14,5 +14,5 @@ SSH_KEY=$4
 if [ $# -lt 4 ]; then
 	scp -o StrictHostKeyChecking=no $FILE_PATH $USERNAME@$SERVER_IP:~/
 else
-	scp -o StrictHostKeyChecking=no -i $SSH_KEY $FILE_PATH $USERNAME@$SERVER_IP:~/
+	scp -i $SSH_KEY -o StrictHostKeyChecking=no $FILE_PATH $USERNAME@$SERVER_IP:~/
 fi
