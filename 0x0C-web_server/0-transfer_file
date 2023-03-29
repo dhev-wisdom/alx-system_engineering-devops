@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 # Script transfers file from client to server
 
-if [ $# -lt 4 ]; then
+if [ $# -lt 3 ]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 	exit 1
 fi
@@ -11,4 +11,8 @@ SERVER_IP=$2
 USERNAME=$3
 SSH_KEY=$4
 
-scp -o StrickHostKeyChecking=no -i $SSH_KEY $FILE_PATH $USERNAME@$SERVER_IP:~/
+if [ $# -lt 4]; then
+	scp -o StrictHostKeyChecking=no $FILE_PATH $USERNAME@$SERVER_IP:~/
+else
+	scp -o StrictHostKeyChecking=no -i $SSH_KEY $FILE_PATH $USERNAME@$SERVER_IP:~/
+fi
