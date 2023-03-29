@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#  Bash script that configures a new Ubuntu machine to install nginx
+
+sudo apt-get update
+sudo apt-get install nginx 
+curl http://127.0.0.1 -s | grep "Hello World"
