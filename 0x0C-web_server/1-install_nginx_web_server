@@ -1,11 +1,7 @@
-#!/usr/bin/env bash
-#  Bash script that configures a new Ubuntu machine to install nginx
+cript that setup a nginx web server on our server.
 
-sudo apt update -y # Update...
-
-sudo apt upgrade -y # Upgrade...
-
-sudo apt install nginx -y # Install Nginx and answer yes to all prompts
+sudo apt update -y && apt upgrade -y
+sudo apt install nginx -y
 
 # Modify the default Nginx configuration file to include the "Hello World!" message
 echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
