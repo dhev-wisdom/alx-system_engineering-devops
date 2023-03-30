@@ -7,8 +7,8 @@ sudo apt upgrade -y # Upgrade...
 
 sudo apt install nginx -y # Install Nginx and answer yes to all prompts
 
-Hello="Hello World"
-echo "$Hello" > /var/www/html/index.html
+# Modify the default Nginx configuration file to include the "Hello World!" message
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
 
 # Test the Nginx configuration and reload the service
 sudo nginx -t && sudo /etc/init.d/nginx reload
