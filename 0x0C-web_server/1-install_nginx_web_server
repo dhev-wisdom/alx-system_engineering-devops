@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script that setup a nginx web server on our server.
 
 sudo apt update -y && apt upgrade -y
