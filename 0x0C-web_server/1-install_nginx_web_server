@@ -1,4 +1,5 @@
-cript that setup a nginx web server on our server.
+#!/bin/bash
+# Script that setup a nginx web server on our server.
 
 sudo apt update -y && apt upgrade -y
 sudo apt install nginx -y
