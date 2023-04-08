@@ -2,7 +2,7 @@
 
 # install nginx
 package {'nginx':
-	ensure => installed,
+  ensure => installed,
 }
 
 # Configure Nginx server
@@ -10,13 +10,13 @@ package {'nginx':
 
 # Create an index.html file containing 'Hello World!'
 file {'/var/www/html/index.html':
-	ensure  => file,
-	content => "Hello World!",
+  ensure  => file,
+  content => 'Hello World!',
 }
 # route '/redirect_me' goes to another page
 file {'/etc/nginx/sites-available/defualt':
-	ensure  => file,
-	content => "
+  ensure  => file,
+  content => "
 		server {
 			listen 80;
 			server_name _;
@@ -24,7 +24,7 @@ file {'/etc/nginx/sites-available/defualt':
 			index index.html;
 		
 			location / {
-				try_files $uri $uri/ =404;
+				try_files ${uri} ${uri}/ =404;
 			}
 
 			location /redirect_me {
@@ -36,13 +36,13 @@ file {'/etc/nginx/sites-available/defualt':
 
 # Enable default site
 file {'/etc/nginx/sites-enabled/default':
-	ensure => 'link',
-	target => '/etc/nginx/sites-available/default',
-	force  => true,
+  ensure => 'link',
+  target => '/etc/nginx/sites-available/default',
+  force  => true,
 }
 
 # Restart nginx
 service {'nginx':
-	ensure => running,
-	enable => true,
+  ensure => running,
+  enable => true,
 }
