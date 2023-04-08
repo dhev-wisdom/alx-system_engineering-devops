@@ -7,19 +7,24 @@ package {'nginx':
 
 # Configure Nginx server
 # GET '/' returns "Hello World!"
-# route '/redirect_me' goes to another page
 
+# Create an index.html file containing 'Hello World!'
+file {'/var/www/html/index.html':
+	ensure  => file,
+	content => "Hello World!",
+}
+# route '/redirect_me' goes to another page
 file {'/etc/nginx/sites-available/defualt':
 	ensure  => file,
 	content => "
 		server {
 			listen 80;
 			server_name _;
-			root /var/www/html/;
+			root /var/www/html;
 			index index.html;
 		
 			location / {
-				return 200 'Hello World!';
+				try_files $uri $uri/ =404;
 			}
 
 			location /redirect_me {
