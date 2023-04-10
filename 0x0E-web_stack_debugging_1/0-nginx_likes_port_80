@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 # Nginx server to be listening on port 80 of all the server’s active IPv4 IPs
 
-sed -i '/server {/a \\n\tlisten 80 default_server;' /etc/nginx/sites-available/default
+# sed -i '/server {/a \\n\tlisten 80 default_server;' /etc/nginx/sites-available/default
+sudo sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
 
-sudo service nginx reload
+# Check if config file is error free and restart server
+if sudo nginx -t &> /dev/null; then
+	sudo service nginx restart
+else
+	echo "Error: Nginx configuration file has syntax errors"
+	exit 1
+fi
