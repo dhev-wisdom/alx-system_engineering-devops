@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Nginx server to be listening on port 80 of all the server’s active IPv4 IPs
+
+sed -i '/server {/a \\n\tlisten 80 default_server;' /etc/nginx/sites-available/default
+
+sudo service nginx reload

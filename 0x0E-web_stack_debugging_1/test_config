@@ -1,0 +1,22 @@
+server {
+
+
+	append this\n
+
+
+
+	append this
+
+/
+
+
+
+/
+
+
+	listen 80 defualt_server;
+
+	location / {
+		return 200 OK;
+	}
+}
