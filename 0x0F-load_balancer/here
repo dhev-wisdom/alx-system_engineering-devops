@@ -1,0 +1,8 @@
+frontend http-in
+	bind *:80
+	default_backend servers
+
+backend servers
+	balance roundrobin
+	server 57882-web-01 54.146.11.39
+	server 57882-web-02 100.25.23.193
