@@ -1,0 +1,6 @@
+sudo apt update
+sudo apt install ufw
+sudo ufw default allow
+sudo ufw proto tcp to any port 22,443,80
+sudo apt enable
+
