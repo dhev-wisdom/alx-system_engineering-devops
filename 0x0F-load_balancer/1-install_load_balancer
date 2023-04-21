@@ -1,0 +1,8 @@
+#!/bin/bash
+# install and configure haproxy
+
+sudo apt update # update packages
+
+sudo apt install haproxy -y # install package
+
+
