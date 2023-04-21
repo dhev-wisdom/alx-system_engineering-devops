@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+sed -i '/\nappend this\n/d' test_config
+sed -i '/server {/a \\n\n\tappend this\\n\n' test_config
