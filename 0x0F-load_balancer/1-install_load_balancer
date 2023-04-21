@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+#!/bin/bash
+# install and configure haproxy
+
+sudo apt update # update packages
+
+sudo apt install haproxy -y # install package
+
+
+=======
+#!/usr/bin/env bash
+# Install HAproxy on load balancer
+
+sudo apt-get update -y # Update
+sudo apt-get install build-essential -y # Install required dependecies
+
+sudo apt-get install haproxy -y # Install haproxy
+
+sudo service haproxy start # Start haproxy
+
+# Modify haproxy configuration file
+sudo echo -e "\n\nfrontend http-in\n\tbind :*80\n\tmode http\n\tdefault_backend servers\n\nbackend servers\n\tbalance roundrobin\n\tserver 57882-web-01 54.146.11.39 check\n\tserver 57882-web-02 100.25.23.193 check" >> /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart # Restart haproxy
+>>>>>>> origin

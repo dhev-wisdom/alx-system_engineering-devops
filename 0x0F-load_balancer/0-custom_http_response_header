@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Configure a new Ubuntu machine running on Nginx
+# HTTP response header to request made to this server
+# must contain custom header 'X-Served-By'
+# value must be the hostname of the server Nginx
+
+sudo apt update -y # Update package lists
+
+sudo apt install nginx -y # Install nginx
+
+service nginx start # start server
+
+# Configure Nginx server to contain HTTP header X-Served-By
+
+sudo sed -i '/^ *server {/a\	add_header X-Served-By $host;' /etc/nginx/sites-available/default
+
+sudo service nginx reload # reload server
