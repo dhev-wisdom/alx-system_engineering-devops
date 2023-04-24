@@ -2,3 +2,4 @@
 # Nginx server to be listening on port 80 of all the server’s active IPv4 IPs
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
+sudo service nginx stop
