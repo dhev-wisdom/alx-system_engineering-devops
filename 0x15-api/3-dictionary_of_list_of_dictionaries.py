@@ -21,10 +21,8 @@ def export_json():
         """
         Helper function to create data to be exported
         """
-        print("This is the current value of i:", i)
         array_ = []
-        todo = requests.get("https://jsonplaceholder \
-                            .typicode.com/users/{}/todos/".format(i)).json()
+        todo = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos/".format(i)).json()
 
         username = user["name"]
 
