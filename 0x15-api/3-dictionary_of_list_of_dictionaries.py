@@ -17,14 +17,14 @@ def export_json():
     users = requests.get("https://jsonplaceholder.typicode.com/users/").json()
     i = 1
 
-
     for user in users:
         """
         Helper function to create data to be exported
         """
         print("This is the current value of i:", i)
         array_ = []
-        todo = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos/".format(i)).json()
+        todo = requests.get("https://jsonplaceholder \
+                            .typicode.com/users/{}/todos/".format(i)).json()
 
         username = user["name"]
 
