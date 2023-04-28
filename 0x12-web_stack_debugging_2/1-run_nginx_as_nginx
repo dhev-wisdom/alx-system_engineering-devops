@@ -6,4 +6,5 @@ sudo nginx service stop
 sed -i 's/user www-data/user nginx/g' /etc/nginx/nginx.conf
 sed -i 's/server {\n\t/a listen [::]:8080 default_server ipv6only=off;' /etc/nginx/sites-available/default
 
-sudo service nginx start
+chmod -R 666 /etc/nginx/nginx.conf
+su service nginx start
