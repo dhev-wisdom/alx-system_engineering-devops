@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Bash script runs 'whoami' for specifeid user
+
+user=$1
+su $user
+whoami
