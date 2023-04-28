@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Bash script runs 'whoami' for specifeid user
 
-user=$1
-su $user
-whoami
+if [ $# -eq 1 ]
+then
+	su "$1" whoami
+	exit 0
+else
+	whoami
+fi
