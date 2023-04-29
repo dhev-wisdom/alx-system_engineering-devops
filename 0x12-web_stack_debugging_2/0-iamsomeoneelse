@@ -3,7 +3,7 @@
 
 if [ $# -eq 1 ]
 then
-	su "$1" whoami
+	su - $1 -c "whoami"
 else
 	whoami
 fi
