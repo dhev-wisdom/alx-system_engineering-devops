@@ -5,10 +5,6 @@ if [ $# -eq 1 ]
 then
 	su - "$1" -c "whoami"
 	exit 0
-else if [ $# -eq 0 ]
-	sudo whoami
-	exit 0
 else
-	echo "Usage: $0 <username>"
-	exit 1
+	sudo whoami
 fi
