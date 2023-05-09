@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Bash script runs 'whoami' for specifeid user
+
+if [ $# -eq 1 ]
+then
+	su - "$1" -c "whoami"
+	exit 0
+else
+	sudo whoami
+fi

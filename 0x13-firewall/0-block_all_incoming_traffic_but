@@ -2,8 +2,8 @@
 
 sudo apt update -y
 sudo apt install ufw -y
-sudo apt enable -y
-sudo apt disable -y
-sudo ufw default allow
-sudo ufw proto tcp to any port 22,443,80
-sudo apt enable -y
+sudo ufw default deny incoming
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+sudo ufw enable

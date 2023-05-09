@@ -4,11 +4,14 @@
 # must contain custom header 'X-Served-By'
 # value must be the hostname of the server Nginx
 
-sudo apt update -y # Update package lists
-
-sudo apt install nginx -y # Install nginx
-
-service nginx start # start server
+if [ $(dpkg-query -W -f='${Status}' nginx 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
+echo "Nginx is not installed. Installing now..."
+	sudo apt-get update
+	sudo apt-get install nginx -y
+	sudo service nginx start
+else
+	echo "Nginx is already installed."
+fi
 
 # Configure Nginx server to contain HTTP header X-Served-By
 
