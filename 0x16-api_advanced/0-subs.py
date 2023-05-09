@@ -12,7 +12,7 @@ def number_of_subscribers(subreddit):
     """
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
-            "User-Agent": "Ubuntu; Linux x86_64; Firefox/89.0"
+            "User-Agent": "ubuntu:hbtn:v1.0 (by /u/piroli_)"
             }
 
     response = requests(url, headers=headers, allow_redirects=False)
