@@ -15,6 +15,6 @@ fi
 
 # Configure Nginx server to contain HTTP header X-Served-By
 
-sudo sed -i '/^ *server {/a\	add_header X-Served-By $host;' /etc/nginx/sites-available/default
+sudo sed -i '/^ *server {/a\	add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
 
 sudo service nginx reload # reload server
