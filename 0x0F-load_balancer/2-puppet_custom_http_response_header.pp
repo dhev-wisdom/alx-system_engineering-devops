@@ -11,7 +11,7 @@ package { 'nginx':
 
 class { 'nginx':
 	header => {
-		'X-Served-By' => '$host',
+		'X-Served-By' => '$hostname',
 	},
 }
 
