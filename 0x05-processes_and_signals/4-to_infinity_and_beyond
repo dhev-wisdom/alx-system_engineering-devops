@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#  Bash script echoes a text till infinity unless stopped with ctr+c
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
