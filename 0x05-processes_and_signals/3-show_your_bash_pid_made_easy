@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#  Bash script displays a list of currently running processes.
+pids=$(pgrep -f bash)
+
+for pid in $pids; do
+	process_name=$(cat "/proc/$pid/comm")
+	if [ "$process_name" != "sandbox_run.sh" ]; then
+		echo "$pid $process_name"
+	fi
+done
