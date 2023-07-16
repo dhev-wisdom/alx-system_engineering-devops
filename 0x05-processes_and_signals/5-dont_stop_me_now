@@ -2,6 +2,6 @@
 #  Bash script kills already running process by fetching the PID
 pid=$(pgrep -f "4-to_infinity_and_beyond")
 
-if [ -n $pid ]; then
-	kill $pid
+if [ -n "$pid" ]; then
+	kill "$pid"
 fi
