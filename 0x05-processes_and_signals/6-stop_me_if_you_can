@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 #  Bash script kills already running process by fetching the PID
 #  without `kill` or `killall`
-pid=$(pgrep -f "4-to_infinity_and_beyond")
-
-if [ -n "$pid" ]; then
-	echo -n "SIGTERM" > "/proc/$pid/stop_signal"
-fi
+pkill -f  "4-to_infinity_and_beyond"
