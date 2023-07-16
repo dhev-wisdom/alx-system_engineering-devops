@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #  Bash script displays a list of currently running processes.
-ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest --sort=-%cpu
+ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest --sort=-%cpu
