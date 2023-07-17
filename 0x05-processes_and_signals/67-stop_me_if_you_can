@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#  Bash script kills already running process by fetching the PID
+#  without `kill` or `killall`
+pkill -f  "7-highlander"

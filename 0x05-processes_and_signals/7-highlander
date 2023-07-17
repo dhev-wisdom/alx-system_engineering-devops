@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#  Bash script echoes a text till infinity unless stopped with ctr+c
+#  echo I am invincible!!! when receiving a SIGTERM signal
+
+terminate_process() {
+	echo "I am invincible!!!"
+	exit 0
+}
+
+trap terminate_process SIGTERM
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
