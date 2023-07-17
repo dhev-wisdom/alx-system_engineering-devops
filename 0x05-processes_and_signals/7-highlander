@@ -4,7 +4,7 @@
 
 terminate_process() {
 	echo "I am invincible!!!"
-	exit 0
+	exit
 }
 
 trap 'terminate_process' SIGTERM
