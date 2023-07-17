@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#  Bash script kills already running process by fetching the PID
+pid=$(pgrep -f "7-highlander")
+
+if [ -n "$pid" ]; then
+	kill "$pid"
+fi
