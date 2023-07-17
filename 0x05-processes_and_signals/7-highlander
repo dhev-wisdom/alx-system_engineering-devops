@@ -7,7 +7,7 @@ terminate_process() {
 	exit 0
 }
 
-trap terminate_process SIGTERM
+trap 'terminate_process' SIGTERM
 
 while true; do
 	echo "To infinity and beyond"
